@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>Список задач</title>
+</head>
+<body>
+
+    <!-- ===== ШАПКА ===== -->
+    <header class="header">
+        <h1 class="header-title">✅ Мой список задач</h1>
+        <p class="header-subtitle">Управляй своими делами</p>
+    </header>
+
+    <!-- ===== ОСНОВНОЙ БЛОК ===== -->
+    <main class="container">
+
+        <!-- Форма добавления -->
+        <section class="todo-form">
+            <input
+                type="text"
+                id="task-input"
+                class="todo-input"
+                placeholder="Введите новую задачу..."
+                autofocus
+            />
+            <button class="btn btn-add" id="add-task-btn">➕ Добавить</button>
+        </section>
+
+        <!-- Список задач -->
+        <section class="todo-list-section">
+            <div class="todo-header">
+                <h2 class="todo-title">📋 Список задач</h2>
+                <span class="task-counter" id="task-counter">0 задач</span>
+            </div>
+
+            <ul class="task-list" id="task-list">
+                <!-- Задачи будут добавляться сюда через JS -->
+            </ul>
+        </section>
+
+        <!-- Панель управления -->
+        <section class="action-panel">
+            <button class="btn btn-remove" id="remove-task-btn">🗑️ Удалить выбранную</button>
+            <button class="btn btn-clear" id="clear-tasks-btn">🧹 Очистить всё</button>
+            <button class="btn btn-save" id="save-tasks-btn">💾 Сохранить</button>
+            <button class="btn btn-load" id="load-tasks-btn">📂 Загрузить</button>
+            <button class="btn btn-sort" id="sort-tasks-btn">🔀 Сортировать по алфавиту</button>
+        </section>
+
+    </main>
+
+    <!-- ===== ПОДВАЛ ===== -->
+    <footer class="footer">
+        <p class="footer-text">© 2024 Мой список задач. Сделано с ❤️</p>
+    </footer>
+
+    <!-- ===== JS ===== -->
+     <script src="./scripts/config.js"></script>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>

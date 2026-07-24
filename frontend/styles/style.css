@@ -1,0 +1,313 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7fc;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.header-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.header-subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-top: 0.25rem;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    flex: 1;
+    width: 100%;
+}
+
+/* ===== ФОРМА ===== */
+.todo-form {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.todo-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+
+.todo-input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+}
+
+/* ===== КНОПКИ (общие) ===== */
+.btn {
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.btn-add {
+    background: #667eea;
+    color: #fff;
+}
+
+.btn-add:hover {
+    background: #5a6fd6;
+}
+
+.btn-remove {
+    background: #f39c12;
+    color: #fff;
+}
+
+.btn-remove:hover {
+    background: #e08e0b;
+}
+
+.btn-clear {
+    background: #e74c3c;
+    color: #fff;
+}
+
+.btn-clear:hover {
+    background: #c0392b;
+}
+
+.btn-save {
+    background: #2ecc71;
+    color: #fff;
+}
+
+.btn-save:hover {
+    background: #27ae60;
+}
+
+.btn-load {
+    background: #3498db;
+    color: #fff;
+}
+
+.btn-load:hover {
+    background: #2980b9;
+}
+
+.btn-sort {
+    background: #9b59b6;
+    color: #fff;
+}
+
+.btn-sort:hover {
+    background: #8e44ad;
+}
+
+/* ===== ЗАГОЛОВОК СПИСКА ===== */
+.todo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.5rem;
+}
+
+.todo-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.task-counter {
+    font-size: 0.9rem;
+    background: #e9ecef;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    color: #495057;
+}
+
+/* ===== СПИСОК ЗАДАЧ ===== */
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    min-height: 100px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    transition: all 0.25s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+.task-item:hover {
+    background: #f8f9fa;
+    border-color: #ced4da;
+    transform: translateX(4px);
+}
+
+/* Состояние "выбрана" (для удаления) */
+.task-item.selected {
+    background: #dbeafe;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+/* Текст задачи */
+.task-text {
+    flex: 1;
+    font-size: 1rem;
+}
+
+/* Кнопка "Выполнить" (чекбокс-стиль) */
+.task-check {
+    margin-right: 0.75rem;
+    width: 20px;
+    height: 20px;
+    accent-color: #667eea;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Выполненная задача */
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+/* Кнопка удаления конкретной задачи (X) */
+.task-delete-btn {
+    background: none;
+    border: none;
+    color: #adb5bd;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0 0.25rem;
+    transition: color 0.2s ease;
+}
+
+.task-delete-btn:hover {
+    color: #e74c3c;
+}
+
+/* ===== ПАНЕЛЬ УПРАВЛЕНИЯ ===== */
+.action-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid #e9ecef;
+}
+
+.action-panel .btn {
+    flex: 1 1 auto;
+    min-width: 120px;
+    text-align: center;
+}
+
+/* ===== ПУСТОЙ СПИСОК ===== */
+.empty-message {
+    text-align: center;
+    color: #adb5bd;
+    font-size: 1.1rem;
+    padding: 2rem 0;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    background: #fff;
+    border-top: 1px solid #e9ecef;
+    margin-top: 2rem;
+}
+
+.footer-text {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 600px) {
+    .header-title {
+        font-size: 1.8rem;
+    }
+
+    .todo-form {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .action-panel .btn {
+        min-width: unset;
+        flex: 1 1 45%;
+    }
+
+    .todo-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .task-item {
+        padding: 0.6rem 0.8rem;
+    }
+
+    .task-text {
+        font-size: 0.95rem;
+    }
+}
