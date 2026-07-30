@@ -1,7 +1,7 @@
 "use strict";
 
 // ===== КОНФИГУРАЦИЯ =====
-const API_BASE = 'http://localhost:3000/api/todos'; // 🔁 Сюда впишите свой URL
+const API_BASE = 'http://localhost:3000/todos'; 
 
 // ===== ЭЛЕМЕНТЫ DOM =====
 const taskInput = document.getElementById('task-input');
