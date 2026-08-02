@@ -20,20 +20,5 @@ function inicializationDB() {
     console.log("База данных инициализирована.")
 }
 
-function getAllTodos() {
-    return database.prepare('SELECT * FROM todos ORDER BY created_at DESC').all();
-}
-
-function getTodoById(id) {
-    return database.prepare('SELECT * FROM todos WHERE id = ?').get(id);
-}
-
-function deleteTodoById(id) {
-    return database.prepare('DELETE FROM todos WHERE id = ?').run(id)
-}
-
-function deleteAllTodos(){
-    return database.prepare('DELETE FROM todos').run();
-}
  
-export { database, getAllTodos, getTodoById, deleteTodoById, deleteAllTodos, inicializationDB } ;
+export { database, inicializationDB } ;
