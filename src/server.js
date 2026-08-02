@@ -1,3 +1,4 @@
+import dotenv from 'dotenv'
 import http from 'node:http';
 import path from 'node:path';
 import url from 'node:url';
@@ -12,6 +13,11 @@ const __Filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__Filename);
 const publicDir = path.join(__dirname, '..', 'public');
 const indexPath = path.join(publicDir, 'index.html');
+const envPath = path.join(__dirname, '..', '.env');
+
+dotenv.config({path: envPath});
+
+const PORT = process.env.PORT;
 
 inicializationDB(); 
 
@@ -32,6 +38,6 @@ http.createServer( async (request, response) => {
         .writeHead(404)
         .end('404 Not Found');
 
-}).listen(3000, "localhost", () => {
+}).listen(PORT, "localhost", () => {
     console.log("Сервер начал прослушивание запросов на порту 3000.");
 });
